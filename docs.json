@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Account Access",
+    "source_document": "support/account-access.md",
+    "content": "Password resets are handled through the sign-in page. A user should open the sign-in page, choose Forgot password, enter the email address attached to the account, and follow the secure reset link sent by email. Reset links expire after 30 minutes. If the email does not arrive, the user should check spam, confirm that the email address is the same one used at registration, and request a new link. Support agents must never ask a user to share their current password. Multi-factor authentication can be reset only after identity verification. For locked accounts, the user should wait 15 minutes after five failed sign-in attempts before trying again."
+  },
+  {
+    "title": "Billing and Invoices",
+    "source_document": "support/billing.md",
+    "content": "Invoices are available from the Billing page inside account settings. Workspace owners and billing admins can download invoices as PDF files, update the billing email, and change the payment method. A failed card payment is retried automatically over the next seven days. If all retries fail, the workspace is moved to a restricted state until a valid payment method is added. Refund requests are reviewed by support and depend on the subscription plan, billing date, and usage. The knowledge base does not authorize support agents to promise refunds before review."
+  },
+  {
+    "title": "Data Security",
+    "source_document": "security/data-security.md",
+    "content": "Customer data is encrypted in transit with TLS and encrypted at rest by the storage provider. Production access is limited to authorized staff with role-based permissions. Administrative access requires multi-factor authentication. Audit logs record sensitive administrative actions such as user impersonation, permission changes, exports, and deletion requests. Data deletion requests are processed within 30 days unless a legal hold applies. Backups are retained for disaster recovery and expire according to the backup retention policy."
+  },
+  {
+    "title": "RAG Assistant Operations",
+    "source_document": "engineering/rag-operations.md",
+    "content": "The RAG assistant must retrieve relevant chunks before calling a language model. Retrieved context is injected into a prompt that instructs the model to answer only from the provided context. If similarity scores are below the configured threshold, the assistant returns the fallback response instead of calling the language model. The default retrieval count is three chunks. Similarity scores are logged for observability. Chat memory is intentionally short and includes only the last few user and assistant messages for the same session identifier."
+  }
+]
