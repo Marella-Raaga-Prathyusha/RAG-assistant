@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RAG Assistant</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">R</span>
+          <div>
+            <h1>RAG Assistant</h1>
+            <p id="session-label"></p>
+          </div>
+        </div>
+        <button id="new-chat" class="icon-button wide" type="button" title="New chat" aria-label="New chat">
+          <span aria-hidden="true">+</span>
+          <span>New Chat</span>
+        </button>
+        <section class="source-panel" aria-label="Sources">
+          <h2>Sources</h2>
+          <div id="sources" class="sources empty">No sources yet.</div>
+        </section>
+      </aside>
+
+      <section class="chat-panel" aria-label="Chat">
+        <div id="messages" class="messages" aria-live="polite"></div>
+        <div id="loading" class="loading hidden" role="status">
+          <span></span><span></span><span></span>
+        </div>
+        <form id="chat-form" class="composer">
+          <label class="sr-only" for="message-input">Message</label>
+          <textarea
+            id="message-input"
+            rows="1"
+            maxlength="4000"
+            placeholder="Ask the knowledge base..."
+            autocomplete="off"
+          ></textarea>
+          <button id="send-button" class="icon-button send" type="submit" title="Send" aria-label="Send">
+            <span aria-hidden="true">→</span>
+          </button>
+        </form>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
